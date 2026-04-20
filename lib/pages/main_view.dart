@@ -3,6 +3,7 @@ import 'package:lab2/widgets/difficulty_control.dart';
 import 'package:lab2/widgets/ingredient_control.dart';
 import 'package:lab2/widgets/kitchen_control.dart';
 import 'package:lab2/widgets/price_control.dart';
+import 'package:lab2/widgets/recipe_detail.dart';
 import 'package:lab2/widgets/recipe_list.dart';
 import 'package:lab2/widgets/time_control.dart';
 
@@ -50,12 +51,14 @@ class MainView extends StatelessWidget {
   }
 
   Widget _recipeArea(context) {
-    return Expanded(
-      child: Container(
+    var showList = false;
+    var contents = showList ? RecipeList() : RecipeDetail();
+    return Expanded(child: contents);
+     // child: Container(
         //color: const Color.fromARGB(255, 204, 216, 176),
-      child: RecipeList(),
-      ),
+      //child: RecipeList(),
+     // ),
       
-    );
+   // );
   }
 }
