@@ -87,7 +87,7 @@ class Recipe {
     return _image!;
   }
 
-  Image customImage({double width = 56, height = 56, BoxFit? fit}) {
+  Image customImage({double width = 500.0, height = 500.0, BoxFit? fit}) {
     String path = 'assets/recipes/';
 
     path = path + imagePath;
