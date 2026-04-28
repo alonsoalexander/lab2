@@ -14,30 +14,30 @@ class KitchenControl extends StatelessWidget {
     const labels = Cuisine.labels;
 
     return Row(
-  mainAxisAlignment: MainAxisAlignment.start,
-  children: [
-    Text(
-      "              Kök  ",
-      style: TextStyle(fontWeight: FontWeight.bold),
-      ),
-    SizedBox(width: AppTheme.paddingSmall),
-    DropdownMenu<String>(
-      width: 164,
-      enableFilter: false, // Disables filtering (prevents typing)
-      requestFocusOnTap: false, // Prevents keyboard from opening
-      initialSelection: labels[0],
-      dropdownMenuEntries: [
-        for (int i = 0; i < labels.length; i++)
-          DropdownMenuEntry(
-            value: labels[i],
-            label: labels[i],
-          ),
-        ],
-        onSelected: (value){
-          recipeHandler.setMainIngredient(value);
-        },
-      ),
-    ]
-);
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Text(
+          "              Kök  ",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        SizedBox(width: AppTheme.paddingSmall),
+        DropdownMenu<String>(
+          width: 164,
+          enableFilter: false, // Disables filtering (prevents typing)
+          requestFocusOnTap: false, // Prevents keyboard from opening
+          initialSelection: labels[0],
+          dropdownMenuEntries: [
+            for (int i = 0; i < labels.length; i++)
+              DropdownMenuEntry(
+                value: labels[i],
+                label: labels[i],
+                leadingIcon: Cuisine.flags[i],),
+          ],
+          onSelected: (value) {
+            recipeHandler.setCuisine(value);
+          },
+        ),
+      ],
+    );
   }
 }

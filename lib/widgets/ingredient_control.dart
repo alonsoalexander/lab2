@@ -24,7 +24,11 @@ class IngredientControl extends StatelessWidget {
           initialSelection: labels[0],
           dropdownMenuEntries: [
             for (int i = 0; i < labels.length; i++)
-              DropdownMenuEntry(value: labels[i], label: labels[i]),
+              DropdownMenuEntry(
+                value: labels[i],
+                label: labels[i],
+                leadingIcon: MainIngredient.icons[i],
+              ),
           ],
           onSelected: (value) {
             recipeHandler.setMainIngredient(value);

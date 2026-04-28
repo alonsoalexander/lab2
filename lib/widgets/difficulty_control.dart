@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lab2/app_theme.dart';
 import 'package:lab2/model/recipe_database/recipe_handler.dart';
 import 'package:lab2/util/difficulty.dart';
 import 'package:provider/provider.dart';
@@ -19,19 +20,27 @@ class _DifficultyControlState extends State<DifficultyControl> {
     return RadioGroup<String>(
       groupValue: _difficulty,
       onChanged: (value) {
-       if (value != null) {
-        setState(() {
-          _difficulty = value;
-        });
-        recipeHandler.setDifficulty(value);
-      }
+        if (value != null) {
+          setState(() {
+            _difficulty = value;
+          });
+          recipeHandler.setDifficulty(value);
+        }
       },
       child: Column(
         children: [
           for (final label in Difficulty.labels)
             RadioListTile<String>(
               dense: true,
-              title: Text(label),
+              title: label == Difficulty.labels.first
+              ? Text(label)
+              : Row(
+                children: [
+                  Difficulty.icon(label, width: 40)!,
+                  SizedBox(width: AppTheme.paddingMedium),
+                  Text(label),
+                ],
+              ),
               value: label,
             ),
         ],
