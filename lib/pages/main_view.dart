@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:lab2/app_theme.dart';
 import 'package:lab2/widgets/difficulty_control.dart';
 import 'package:lab2/widgets/ingredient_control.dart';
 import 'package:lab2/widgets/kitchen_control.dart';
 import 'package:lab2/widgets/price_control.dart';
-import 'package:lab2/widgets/recipe_detail.dart';
-import 'package:lab2/widgets/recipe_list.dart';
 import 'package:lab2/widgets/recipe_area.dart';
 import 'package:lab2/widgets/time_control.dart';
 
@@ -21,16 +20,19 @@ class MainView extends StatelessWidget {
   Widget _controlPanel(BuildContext context, {double width = 320}) {
     return Container(
       width: width,
-      color: const Color.fromARGB(255, 193, 210, 218),
+      color: AppTheme.colorScheme.primaryContainer,
       child: const Column(
         children: [
-          Text("Receptsök"),
+          SizedBox(height: 40),
+          Text(
+            "Receptsök",
+            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+          ),
           Text("Hitta ett recept som passar genom att ändra"),
           Text("Inställningarna nedanför"),
           SizedBox(height: 20),
-
-          Row(children: [Text("Ingrediens"), IngredientControl()]),
-          Row(children: [Text("Kök"), KitchenControl()]),
+          IngredientControl(),
+          KitchenControl(),
           SizedBox(height: 20),
           Text('Svårighetsgrad'),
           DifficultyControl(),
