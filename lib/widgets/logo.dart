@@ -13,7 +13,7 @@ class Logo extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 8),
+          padding: const EdgeInsets.only(top: 8,),
           child: Image.asset(Assets.logo, height: 68),
         ),
         Stack(
@@ -26,17 +26,23 @@ class Logo extends StatelessWidget {
                 fontFamily: 'Monoton',
               ),
             ),
+            Positioned(
+              right: 0,
+              bottom: -5,
+              child: 
             Transform.rotate(
               angle: -20 * pi / 180, // Convert degrees to radians,
               child: Text(
                 'Sök',
                 style: TextStyle(
                   fontFamily: 'Pacifico',
-                  fontSize: 64,
+                  fontSize: 50,
                   color: Color(0xFFFFAC33),
                 ),
               ),
             ),
+            ),
+            Padding(padding: EdgeInsets.only(top: 10),)
           ],
         ),
       ],

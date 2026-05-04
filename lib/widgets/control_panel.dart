@@ -19,6 +19,7 @@ class ControlPanel extends StatelessWidget {
         children: [
           SizedBox(height: 40),
           Logo(),
+          SizedBox(height: 40),
           Text("Hitta ett recept som passar genom att ändra"),
           Text("Inställningarna nedanför"),
           SizedBox(height: 20),
