@@ -3,6 +3,7 @@ import 'package:lab2/app_theme.dart';
 import 'package:lab2/widgets/difficulty_control.dart';
 import 'package:lab2/widgets/ingredient_control.dart';
 import 'package:lab2/widgets/kitchen_control.dart';
+import 'package:lab2/widgets/logo.dart';
 import 'package:lab2/widgets/price_control.dart';
 import 'package:lab2/widgets/time_control.dart';
 
@@ -17,14 +18,11 @@ class ControlPanel extends StatelessWidget {
       child: const Column(
         children: [
           SizedBox(height: 40),
-          Text(
-            "Receptsök",
-            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-          ),
+          Logo(),
           Text("Hitta ett recept som passar genom att ändra"),
           Text("Inställningarna nedanför"),
           SizedBox(height: 20),
-          IngredientControl(),
+          IngredientControl(), 
           KitchenControl(),
           SizedBox(height: 20),
           Text('Svårighetsgrad', style: TextStyle(fontWeight: FontWeight.bold)),
