@@ -17,4 +17,10 @@ class AppTheme {
    
 static TextTheme textTheme = GoogleFonts.nunitoTextTheme();
 
+static const TextStyle mediumHeading = TextStyle(
+  fontSize: 22,
+  fontWeight: FontWeight.w400,
+);
+
 }
+

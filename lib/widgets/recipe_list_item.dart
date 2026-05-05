@@ -10,8 +10,7 @@ class RecipeListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-    leading: recipe.image,
-    title: Text(recipe.name),
+   recipe
     onTap: onTap,
     shape: Border.all(),
  );
