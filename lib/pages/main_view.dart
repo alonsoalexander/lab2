@@ -9,7 +9,14 @@ class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(children: [ControlPanel(), RecipeArea()]),
+      body: Padding( padding: const EdgeInsets.all(16.0),
+      child: Row(
+         children: [
+          ControlPanel(),
+          RecipeArea()
+          ]
+        ),
+      ),
     );
   }
 }

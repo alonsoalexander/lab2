@@ -10,12 +10,14 @@ class RecipeListItem extends StatelessWidget {
 
 @override
 Widget build(BuildContext context) {
-  return GestureDetector(
-    onTap: onTap, // Ser till att hela kortet blir klickbart
-    child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
-      child: RecipeCard(recipe), // Här använder du din egen skräddarsydda widget!
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+    child: RecipeCard(
+      recipe, 
+      onTap: onTap, 
     ),
   );
 }
 }
+
+

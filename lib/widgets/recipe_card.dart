@@ -21,7 +21,7 @@ class RecipeCard extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
-        splashColor: Colors.blue.withAlpha(30),
+        splashColor: const Color.fromARGB(255, 42, 74, 255).withAlpha(30),
         onTap: onTap,
         child: SizedBox(
           height: 128,

@@ -14,7 +14,7 @@ class ControlPanel extends StatelessWidget {
   Widget build(BuildContext context, {double width = 320}) {
     return Container(
       width: width,
-      color: AppTheme.colorScheme.primaryContainer,
+      //color: AppTheme.colorScheme.primaryContainer,
       child: const Column(
         children: [
           SizedBox(height: 40),

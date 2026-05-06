@@ -12,7 +12,7 @@ class AppTheme {
 
  // App color
   static ColorScheme colorScheme = ColorScheme.fromSeed(
-           seedColor: Color(0xFF003366),     // Välj något som känns bra
+           seedColor: Colors.green,     // Välj något som känns bra
    );
    
 static TextTheme textTheme = GoogleFonts.nunitoTextTheme();
