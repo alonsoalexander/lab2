@@ -12,6 +12,7 @@ class DetailRight extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.only(right: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -35,9 +36,19 @@ class DetailRight extends StatelessWidget {
           const SizedBox(height: 16),
           SizedBox(height: 5,),
           Text('Tillagning', style: AppTheme.mediumHeadingBold,),
+          SizedBox(
+            height: 400,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
           Text(recipe.instruction, style: AppTheme.smallHeading),
+                ]
+              )
+            ),
+          )
         ],
       ),
+      
     );
   }
 }
