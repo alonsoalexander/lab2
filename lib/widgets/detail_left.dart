@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lab2/app_theme.dart';
 import 'package:lab2/model/recipe_database/recipe.dart';
+import 'package:lab2/util/cuisine.dart';
 
 class DetailLeft extends StatelessWidget {
   const DetailLeft(this.recipe, {super.key});
@@ -8,27 +10,34 @@ class DetailLeft extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: Column(children: [_image(recipe)]));
+    return Column(
+      
+      //crossAxisAlignment: CrossAxisAlignment.start,
+     
+      children: [
+        _image(recipe),
+        const SizedBox(height: 10,),
+        Text('ingredients', style: AppTheme.mediumHeadingBold,),
+        Text(recipe.ingredients.join('\n') )
+            ]
+      );
   }
 
-  Widget _image(Recipe recipe) {
-    // Vi returnerar hela "paketet" direkt
-    return ClipRRect(
-      // Ger runda hörn på vänster sida (topp och botten)
-      borderRadius: const BorderRadius.only(
-        topLeft: Radius.circular(12),
-        bottomLeft: Radius.circular(12),
+ Widget _image(Recipe recipe) {
+    var square = ClipRect(
+      child: Container(
+        width: 300,
+        height: 300,
+        child: FittedBox(fit: BoxFit.cover, child: recipe.image),
       ),
-      child: SizedBox(
-        width: 104,
-        height: 128, // Samma höjd som hela ditt kort
-        child: FittedBox(
-          fit:
-              BoxFit
-                  .cover, // Ser till att bilden fyller ut hela ytan utan att bli ihoptryckt
-          child: recipe.image,
-        ),
-      ),
+    );
+    var flagImage = Cuisine.flag(recipe.cuisine, width: 50.0);
+
+    return Stack(
+      children: [
+        square,
+        if (flagImage != null) Positioned(bottom: 8, right: 8, child: flagImage),
+      ],
     );
   }
 }

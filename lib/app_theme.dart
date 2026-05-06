@@ -17,12 +17,32 @@ class AppTheme {
    
 static TextTheme textTheme = GoogleFonts.nunitoTextTheme();
 
+static const TextStyle largeHeading = TextStyle(
+  fontSize: 35,
+  fontWeight: FontWeight.bold,
+);
+
 static const TextStyle mediumHeading = TextStyle(
   fontSize: 22,
   fontWeight: FontWeight.w400,
 );
+static const TextStyle mediumHeadingBold = TextStyle(
+  fontSize: 22,
+  fontWeight: FontWeight.bold,
+);
+
+static const TextStyle description = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.w500,
+);
 
 static const TextStyle smallHeading = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.w500, 
+  letterSpacing: 0.15,
+ );
+
+ static const TextStyle smallHeadingBold = TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.bold, //default: w500
   letterSpacing: 0.15,

@@ -22,7 +22,7 @@ class _TimeControlState extends State<TimeControl> {
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text('Maxtid:', style: AppTheme.smallHeading),
+            Text('Maxtid:', style: AppTheme.smallHeadingBold),
             ],
             ),
         Slider(

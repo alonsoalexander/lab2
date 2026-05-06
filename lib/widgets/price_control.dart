@@ -22,7 +22,7 @@ class _PriceControlState extends State<PriceControl> {
         Row(mainAxisAlignment: MainAxisAlignment.start,
         children: [ 
         Text('Maxpris:', 
-         style: AppTheme.smallHeading),  
+         style: AppTheme.smallHeadingBold),  
         ]
       ),
         Slider(

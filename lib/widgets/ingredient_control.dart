@@ -15,7 +15,7 @@ class IngredientControl extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        Text("  Ingrediens   ", style: AppTheme.smallHeading),
+        Text("  Ingrediens   ", style: AppTheme.smallHeadingBold),
         SizedBox(width: AppTheme.paddingSmall),
         DropdownMenu<String>(
           width: 164,

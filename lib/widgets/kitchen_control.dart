@@ -17,7 +17,7 @@ class KitchenControl extends StatelessWidget {
       children: [
         Text(
           "              Kök  ",
-          style: AppTheme.smallHeading,
+          style: AppTheme.smallHeadingBold,
         ),
         SizedBox(width: AppTheme.paddingSmall),
         DropdownMenu<String>(

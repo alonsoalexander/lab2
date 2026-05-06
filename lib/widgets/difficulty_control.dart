@@ -24,7 +24,7 @@ class _DifficultyControlState extends State<DifficultyControl> {
           children: [
             Text(
               'Svårighetsgrad',
-              style: AppTheme.smallHeading,
+              style: AppTheme.smallHeadingBold,
             ),
           ],
         ),

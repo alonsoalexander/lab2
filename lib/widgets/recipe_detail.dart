@@ -34,10 +34,14 @@ class RecipeDetail extends StatelessWidget {
         ]
         ),
         Row(children: [
-          DetailLeft(recipe),
-          DetailRight(recipe)
-        ],
-        )
+          Expanded(
+          flex: 1,  
+          child: 
+          DetailLeft(recipe)), 
+          Expanded(child: 
+          DetailRight(recipe))],
+          ),
+
         ],
       ),
     );
