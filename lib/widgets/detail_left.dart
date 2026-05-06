@@ -11,19 +11,24 @@ class DetailLeft extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      
-      //crossAxisAlignment: CrossAxisAlignment.start,
-     
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _image(recipe),
-        const SizedBox(height: 10,),
-        Text('ingredients', style: AppTheme.mediumHeadingBold,),
-        Text(recipe.ingredients.join('\n') )
-            ]
-      );
+        Center(child: _image(recipe)),
+        //const SizedBox(height: 10),
+        Padding(padding: const EdgeInsets.only(left: 60, top: 10),
+        child: Column(
+        children: [
+        Text('ingredients', style: AppTheme.mediumHeadingBold),
+        Text(recipe.ingredients.join('\n')),
+        ],
+        )
+      
+        )
+      ],
+    );
   }
 
- Widget _image(Recipe recipe) {
+  Widget _image(Recipe recipe) {
     var square = ClipRect(
       child: Container(
         width: 300,
@@ -36,7 +41,8 @@ class DetailLeft extends StatelessWidget {
     return Stack(
       children: [
         square,
-        if (flagImage != null) Positioned(bottom: 8, right: 8, child: flagImage),
+        if (flagImage != null)
+          Positioned(bottom: 8, right: 8, child: flagImage),
       ],
     );
   }
