@@ -19,6 +19,12 @@ class _PriceControlState extends State<PriceControl> {
 
     return Column(
       children: [
+        Row(mainAxisAlignment: MainAxisAlignment.start,
+        children: [ 
+        Text('Maxpris:', 
+         style: AppTheme.smallHeading),  
+        ]
+      ),
         Slider(
           value: _price,
           divisions: 40,

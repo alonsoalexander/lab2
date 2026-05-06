@@ -17,34 +17,48 @@ class _DifficultyControlState extends State<DifficultyControl> {
   @override
   Widget build(BuildContext context) {
     var recipeHandler = Provider.of<RecipeHandler>(context, listen: false);
-    return RadioGroup<String>(
-      groupValue: _difficulty,
-      onChanged: (value) {
-        if (value != null) {
-          setState(() {
-            _difficulty = value;
-          });
-          recipeHandler.setDifficulty(value);
-        }
-      },
-      child: Column(
-        children: [
-          for (final label in Difficulty.labels)
-            RadioListTile<String>(
-              dense: true,
-              title: label == Difficulty.labels.first
-              ? Text(label)
-              : Row(
-                children: [
-                  Difficulty.icon(label, width: 40)!,
-                  SizedBox(width: AppTheme.paddingMedium),
-                  Text(label),
-                ],
-              ),
-              value: label,
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              'Svårighetsgrad',
+              style: AppTheme.smallHeading,
             ),
-        ],
-      ),
+          ],
+        ),
+        RadioGroup<String>(
+          groupValue: _difficulty,
+          onChanged: (value) {
+            if (value != null) {
+              setState(() {
+                _difficulty = value;
+              });
+              recipeHandler.setDifficulty(value);
+            }
+          },
+          child: Column(
+            children: [
+              for (final label in Difficulty.labels)
+                RadioListTile<String>(
+                  dense: true,
+                  title:
+                      label == Difficulty.labels.first
+                          ? Text(label)
+                          : Row(
+                            children: [
+                              Difficulty.icon(label, width: 40)!,
+                              SizedBox(width: AppTheme.paddingMedium),
+                              Text(label),
+                            ],
+                          ),
+                  value: label,
+                ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

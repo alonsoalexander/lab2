@@ -22,5 +22,11 @@ static const TextStyle mediumHeading = TextStyle(
   fontWeight: FontWeight.w400,
 );
 
+static const TextStyle smallHeading = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.bold, //default: w500
+  letterSpacing: 0.15,
+ );
+
 }
 

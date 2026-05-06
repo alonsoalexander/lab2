@@ -6,6 +6,7 @@ import 'package:lab2/widgets/kitchen_control.dart';
 import 'package:lab2/widgets/logo.dart';
 import 'package:lab2/widgets/price_control.dart';
 import 'package:lab2/widgets/time_control.dart';
+import 'package:lab2/widgets/title_description.dart';
 
 class ControlPanel extends StatelessWidget {
   const ControlPanel({super.key});
@@ -19,20 +20,21 @@ class ControlPanel extends StatelessWidget {
         children: [
           SizedBox(height: 40),
           Logo(),
-          SizedBox(height: 40),
-          Text("Hitta ett recept som passar genom att ändra"),
-          Text("Inställningarna nedanför"),
           SizedBox(height: 20),
+          TitleDescription(),
+          Padding(padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [    
+          
           IngredientControl(), 
           KitchenControl(),
-          SizedBox(height: 20),
-          Text('Svårighetsgrad', style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+            )
+          ),
           DifficultyControl(),
           SizedBox(height: 20),
-          Text('Maxpris:', style: TextStyle(fontWeight: FontWeight.bold)),
           PriceControl(),
           SizedBox(height: 20),
-          Text('Maxtid:', style: TextStyle(fontWeight: FontWeight.bold)),
           TimeControl(),
         ],
       ),

@@ -19,6 +19,12 @@ class _TimeControlState extends State<TimeControl> {
     var recipeHandler = Provider.of<RecipeHandler>(context, listen: false);
     return Column(
       children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text('Maxtid:', style: AppTheme.smallHeading),
+            ],
+            ),
         Slider(
           value: _time,
           divisions: 15,

@@ -13,11 +13,11 @@ class KitchenControl extends StatelessWidget {
     const labels = Cuisine.labels;
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Text(
           "              Kök  ",
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: AppTheme.smallHeading,
         ),
         SizedBox(width: AppTheme.paddingSmall),
         DropdownMenu<String>(
