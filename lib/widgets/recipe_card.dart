@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lab2/app_theme.dart';
 import 'package:lab2/model/recipe_database/recipe.dart';
-import 'package:lab2/ui_controller.dart';
 import 'package:lab2/util/cuisine.dart';
 import 'package:lab2/util/difficulty.dart';
 import 'package:lab2/util/main_ingredient.dart';
-import 'package:provider/provider.dart';
 
 class RecipeCard extends StatelessWidget {
   const RecipeCard(this.recipe, {this.onTap, super.key});
@@ -15,7 +13,7 @@ class RecipeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var uiController = Provider.of<UIController>(context, listen: false);
+    //var uiController = Provider.of<UIController>(context, listen: false);
     return Card(
       elevation: 4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -70,7 +68,7 @@ class RecipeCard extends StatelessWidget {
 
   Widget _image(Recipe recipe) {
     var square = ClipRect(
-      child: Container(
+      child: SizedBox(
         width: 104,
         height: 128,
         child: FittedBox(fit: BoxFit.cover, child: recipe.image),
